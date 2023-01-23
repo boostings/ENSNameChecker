@@ -21,7 +21,7 @@ async function checkENS(name, auctionData) {
 
         const page = await browser.newPage();
         await page.goto(`https://app.ens.domains/name/${name}.eth/register`);
-        await page.waitForTimeout(6000);
+        await page.waitForTimeout(3500);
         const html = await page.content();
 
         if (html.includes("This name has a temporary premium.")) {
@@ -77,7 +77,6 @@ async function sendWebhook(name, status, auctionData) {
             console.log(`${words[i]}.eth isn't a claimable name, skipping....`);
         } else {
             await checkENS(words[i]);
-            // Wait for 1 second before making the next request
             await new Promise(resolve => setTimeout(resolve, 500));
         }
     }
@@ -85,11 +84,9 @@ async function sendWebhook(name, status, auctionData) {
     const nameAvailability = checkNameAvailability(name);
 
 if (nameAvailability === 'available') {
-// Code to handle available names
 } else if (nameAvailability === 'unavailable') {
-// Code to handle unavailable names
 } else if (nameAvailability === 'auction') {
-// Code to handle names under auction
+
 }
 
 tab.close();
