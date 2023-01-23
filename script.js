@@ -54,7 +54,7 @@ console.log(`Error checking ${name}.eth: ${err}`);
 
 async function sendWebhook(name, status, auctionData) {
     try {
-        const webhookUrl = "https://canary.discord.com/api/webhooks/1066665250147024896/RhPH_OQbdj7TL8vmkiAMKf-EG1c81ipIeTnpI8sl7cCmmqhbKn-fdD7YvrYrZj1MTy0B";
+        const webhookUrl = // "YOUR_WEBHOOK_URL_HERE";
         let message;
         if (status === 'available') {
             message = `[${name}.eth](https://app.ens.domains/name/${name}.eth/register) was found!`;
