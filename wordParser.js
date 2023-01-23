@@ -7,4 +7,4 @@ const json = JSON.stringify(cleaned_names);
 fs.writeFileSync('words.json', json);
 console.log("File written successfully");
 
-// This script will poll all words from 58000words.txt, convert them into .json array within the file words.json
+// This script will convert all words in 58000words.txt into a .json array within words.json 
